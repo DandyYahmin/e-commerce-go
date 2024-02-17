@@ -13,5 +13,12 @@ func main() {
 		})
 	})
 
+	router.GET("/:name", func(c *gin.Context) {
+		name := c.Param("name")
+		c.JSON(200, gin.H{
+			"message": "Hello " + name + "! I'm Word👋",
+		})
+	})
+
 	router.Run(":5000")
 }
